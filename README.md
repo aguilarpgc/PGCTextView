@@ -30,7 +30,12 @@ pgcTextView2.textColor = .purple
 
 ### Xib file
 
+Add `PGCTextView` in custom class.
+
 ![Class](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/class_name.png)
+
+Modify custom properties for placeholder and counter.
+
 ![Xib](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/xib.png)
 
 ## License
