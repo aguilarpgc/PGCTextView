@@ -30,4 +30,9 @@ pgcTextView2.textColor = .purple
 
 ### Xib file
 
+![Xib](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/xib.png)
+
+## License
+
+PGCTextView is released under the MIT license.
 
