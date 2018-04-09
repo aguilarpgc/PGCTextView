@@ -30,6 +30,7 @@ pgcTextView2.textColor = .purple
 
 ### Xib file
 
+![Class](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/class_name.png)
 ![Xib](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/xib.png)
 
 ## License
