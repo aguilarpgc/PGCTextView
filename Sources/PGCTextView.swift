@@ -5,7 +5,6 @@
 //  Created by Paul Aguilar on 4/3/18.
 //  Copyright © 2018 aguilarpgc. All rights reserved.
 //
-//
 
 //#if os(iOS)
 import  UIKit
@@ -156,7 +155,10 @@ public class PGCTextView: UITextView {
             width: self.bounds.size.width - (self.textContainerInset.left + self.textContainerInset.top + self.textContainer.lineFragmentPadding),
             height: self.bounds.size.height - (self.textContainerInset.top + self.textContainerInset.bottom))
 
-        placeholderLabel.font = self.placeholderFont // ?? self.font
+        if self.placeholderFont != nil {
+
+            placeholderLabel.font = self.placeholderFont
+        }
         placeholderLabel.frame = placeholderFrame
         placeholderLabel.text = placeholder
         placeholderLabel.textAlignment = self.textAlignment
@@ -197,4 +199,3 @@ public class PGCTextView: UITextView {
         }
     }
 }
-
