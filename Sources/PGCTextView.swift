@@ -156,7 +156,6 @@ public class PGCTextView: UITextView {
             height: self.bounds.size.height - (self.textContainerInset.top + self.textContainerInset.bottom))
 
         if self.placeholderFont != nil {
-
             placeholderLabel.font = self.placeholderFont
         }
         placeholderLabel.frame = placeholderFrame

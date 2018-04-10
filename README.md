@@ -13,7 +13,7 @@ Works in xib file and code.
 #### Code
 
 ```swift
-pgcTextView2 = PGCTextView() // (frame: .zero)
+pgcTextView2 = PGCTextView()
 pgcTextView2.counterColor = .blue
 pgcTextView2.counterFont = UIFont.italicSystemFont(ofSize: 11)
 pgcTextView2.font = UIFont.systemFont(ofSize: 20)
@@ -23,9 +23,9 @@ pgcTextView2.isCounterVisible = true
 pgcTextView2.maxDigits = 30
 pgcTextView2.placeholder = "Placeholder"
 pgcTextView2.placeholderColor = .lightGray
-pgcTextView2.placeholderFont = UIFont.systemFont(ofSize: 17)
+pgcTextView2.placeholderFont = UIFont.italicSystemFont(ofSize: 15)
 pgcTextView2.text = ""
-pgcTextView2.textColor = .purple	
+pgcTextView2.textColor = .black
 ```
 
 ### Xib file
