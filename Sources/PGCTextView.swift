@@ -25,10 +25,10 @@ public class PGCTextView: UITextView {
     @IBInspectable public var isCounterAscending: Bool = false {
         didSet { updateCounter() }
     }
-    @IBInspectable public var maxDigits: Int = 0 {
+    @IBInspectable public var maxCharacters: UInt = 0 {
         didSet { updateCounter() }
     }
-    @IBInspectable public var placeholder: String = "" {
+    @IBInspectable public var placeholderText: String = "" {
         didSet { updatePlaceholder() }
     }
     @IBInspectable public var placeholderColor: UIColor = .darkGray {
@@ -52,6 +52,7 @@ public class PGCTextView: UITextView {
     }
     public var counterFont = UIFont.systemFont(ofSize: 12) {
         didSet {
+
             counterLabel.font = counterFont
         }
     }
@@ -64,7 +65,7 @@ public class PGCTextView: UITextView {
         label.lineBreakMode = .byClipping
         label.font = self.font
         label.numberOfLines = 0
-        label.text = placeholder
+        label.text = placeholderText
         label.textAlignment = .left
         self.addSubview(label)
 
@@ -84,7 +85,7 @@ public class PGCTextView: UITextView {
         label.adjustsFontSizeToFitWidth = true
         label.font = self.font
         label.frame = counterFrame
-        label.text = "\(maxDigits)"
+        label.text = "\(maxCharacters)"
         label.textAlignment = .center
         self.addSubview(label)
 
@@ -123,19 +124,17 @@ public class PGCTextView: UITextView {
 
         placeholderLabel.isHidden = !text.isEmpty
 
-        if maxDigits > 0 && isCounterVisible {
+        if maxCharacters > 0 && isCounterVisible {
 
-            if self.text.count > maxDigits {
-                let tempText = self.text[self.text.startIndex..<self.text.index(self.text.startIndex, offsetBy: maxDigits)]
+            if self.text.count > maxCharacters {
+
+                let range = self.text.startIndex..<self.text.index(self.text.startIndex, offsetBy: Int(maxCharacters))
+
+                let tempText = self.text[range]
                 self.text = String(tempText)
             }
 
-            if isCounterAscending {
-                counterLabel.text = "\(self.text.count)"
-            }
-            else {
-                counterLabel.text = "\(maxDigits - self.text.count)"
-            }
+            updateCounterTracking()
         }
     }
 
@@ -162,7 +161,7 @@ public class PGCTextView: UITextView {
             placeholderLabel.font = self.placeholderFont
         }
         placeholderLabel.frame = placeholderFrame
-        placeholderLabel.text = placeholder
+        placeholderLabel.text = placeholderText
         placeholderLabel.textAlignment = self.textAlignment
         placeholderLabel.textColor = placeholderColor
         placeholderLabel.sizeToFit()
@@ -185,7 +184,7 @@ public class PGCTextView: UITextView {
         counterLabel.font = counterFont
         counterLabel.textColor = counterColor
 
-        guard maxDigits > 0 && isCounterVisible else {
+        guard maxCharacters > 0 && isCounterVisible else {
 
             counterLabel.isHidden = true
             return
@@ -193,11 +192,16 @@ public class PGCTextView: UITextView {
 
         counterLabel.isHidden = false
 
+        updateCounterTracking()
+    }
+
+    private func updateCounterTracking() {
+
         if isCounterAscending {
             counterLabel.text = "\(self.text.count)"
         }
         else {
-            counterLabel.text = "\(maxDigits - self.text.count)"
+            counterLabel.text = "\(Int(maxCharacters) - self.text.count)"
         }
     }
 }

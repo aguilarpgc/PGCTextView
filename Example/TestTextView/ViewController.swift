@@ -55,10 +55,10 @@ class ViewController: UIViewController {
             height: 200.0)
         pgcTextView2.isCounterAscending = true
         pgcTextView2.isCounterVisible = true
-        pgcTextView2.maxDigits = 50
-        pgcTextView2.placeholder = "Placeholder"
+        pgcTextView2.maxCharacters = 50
         pgcTextView2.placeholderColor = .darkGray
         pgcTextView2.placeholderFont = UIFont.italicSystemFont(ofSize: 25)
+        pgcTextView2.placeholderText = "Placeholder"
         pgcTextView2.text = ""
         pgcTextView2.textColor = .black
         
