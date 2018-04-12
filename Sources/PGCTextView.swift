@@ -61,10 +61,11 @@ public class PGCTextView: UITextView {
     private lazy var placeholderLabel: UILabel = {
 
         let label = UILabel()
+        label.lineBreakMode = .byClipping
         label.font = self.font
         label.numberOfLines = 0
         label.text = placeholder
-        label.textAlignment = .center
+        label.textAlignment = .left
         self.addSubview(label)
 
         return label
@@ -98,9 +99,11 @@ public class PGCTextView: UITextView {
     }
 
     public override func draw(_ rect: CGRect) {
+        
         super.draw(rect)
 
         firstSetup()
+        updateAll()
     }
 
     // MARK: - Setup -
@@ -112,8 +115,6 @@ public class PGCTextView: UITextView {
             selector: #selector(self.textChanged),
             name: NSNotification.Name.UITextViewTextDidChange,
             object: nil)
-
-        updateAll()
     }
 
     // MARK: - Methods -
@@ -145,14 +146,16 @@ public class PGCTextView: UITextView {
         updateCounter()
         updateCounterFrame()
         updatePlaceholder()
+
+        placeholderLabel.isHidden = !text.isEmpty
     }
 
     private func updatePlaceholder() {
 
         let placeholderFrame = CGRect(
             x: self.textContainerInset.left + self.textContainer.lineFragmentPadding,
-            y: self.textContainerInset.top,
-            width: self.bounds.size.width - (self.textContainerInset.left + self.textContainerInset.top + self.textContainer.lineFragmentPadding),
+            y: self.textContainerInset.top + 0.5,
+            width: self.bounds.size.width - (self.textContainerInset.left + self.textContainerInset.right),
             height: self.bounds.size.height - (self.textContainerInset.top + self.textContainerInset.bottom))
 
         if self.placeholderFont != nil {
