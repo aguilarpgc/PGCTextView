@@ -36,7 +36,7 @@ Add `PGCTextView` in custom class.
 
 Modify custom properties for placeholder and counter.
 
-![Xib](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/xib.png)
+![Xib](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/xib_file.png)
 
 ## License
 
