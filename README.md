@@ -13,24 +13,25 @@ Works in xib file and code.
 #### Code
 
 ```swift
-pgcTextView2 = PGCTextView()
-pgcTextView2.counterColor = .blue
-pgcTextView2.counterFont = UIFont.italicSystemFont(ofSize: 11)
-pgcTextView2.font = UIFont.systemFont(ofSize: 25)
-pgcTextView2.frame = CGRect(x: 20.0, y: 100.0, width: 150.0, height: 200.0)
-pgcTextView2.isCounterAscending = true
-pgcTextView2.isCounterVisible = true
-pgcTextView2.maxCharacters = 50
-pgcTextView2.placeholderColor = .darkGray
-pgcTextView2.placeholderFont = UIFont.italicSystemFont(ofSize: 25)
-pgcTextView2.placeholderText = "Placeholder"
-pgcTextView2.text = ""
-pgcTextView2.textColor = .black
+let customTextView = PGCTextView()
+customTextView.counterColor = .blue
+customTextView.counterFont = UIFont.italicSystemFont(ofSize: 11)
+customTextView.font = UIFont.systemFont(ofSize: 25)
+customTextView.frame = CGRect(x: 20.0, y: 100.0, width: 150.0, height: 200.0)
+customTextView.isCounterAscending = true
+customTextView.isCounterVisible = true
+customTextView.maxCharacters = 50
+customTextView.placeholderColor = .darkGray
+customTextView.placeholderFont = UIFont.italicSystemFont(ofSize: 25)
+customTextView.placeholderText = "Placeholder"
+customTextView.text = ""
+customTextView.textColor = .black
+self.view.addSubview(customTextView)
 ```
 
 ### Xib file
 
-Add `PGCTextView` in custom class.
+Add `PGCTextView` in Identity inspector > Custom Class > Class.
 
 ![Class](https://github.com/aguilarpgc/PGCTextView/blob/master/Images/class_name.png)
 
