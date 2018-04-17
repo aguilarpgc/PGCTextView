@@ -17,37 +17,54 @@ public class PGCTextView: UITextView {
     // MARK: - Property Observers -
 
     @IBInspectable public var counterColor: UIColor = .black {
-        didSet { updateCounter() }
+        didSet {
+            updateCounter()
+        }
     }
     @IBInspectable public var isCounterVisible: Bool = false {
-        didSet { updateCounter() }
+        didSet {
+            updateCounter()
+        }
     }
     @IBInspectable public var isCounterAscending: Bool = false {
-        didSet { updateCounter() }
+        didSet {
+            updateCounter()
+        }
     }
     @IBInspectable public var maxCharacters: UInt = 0 {
-        didSet { updateCounter() }
+        didSet {
+            updateCounter()
+        }
     }
     @IBInspectable public var placeholderText: String = "" {
-        didSet { updatePlaceholder() }
+        didSet {
+            updatePlaceholder()
+        }
     }
     @IBInspectable public var placeholderColor: UIColor = .darkGray {
-        didSet { updatePlaceholder() }
+        didSet {
+            updatePlaceholder()
+        }
     }
 
     override public var font: UIFont! {
-        didSet { updatePlaceholder() }
+        didSet {
+            updatePlaceholder()
+        }
     }
     override public var text: String! {
-        didSet { textChanged() }
+        didSet {
+            textChanged()
+        }
     }
 
     public var placeholderFont: UIFont? {
         didSet {
 
-            guard placeholderFont != nil else { return }
+            if let placeholderFont = placeholderFont {
 
-            placeholderLabel.font = placeholderFont
+                placeholderLabel.font = placeholderFont
+            }
         }
     }
     public var counterFont = UIFont.systemFont(ofSize: 12) {
@@ -62,8 +79,8 @@ public class PGCTextView: UITextView {
     private lazy var placeholderLabel: UILabel = {
 
         let label = UILabel()
-        label.lineBreakMode = .byClipping
         label.font = self.font
+        label.lineBreakMode = .byClipping
         label.numberOfLines = 0
         label.text = placeholderText
         label.textAlignment = .left
@@ -157,9 +174,11 @@ public class PGCTextView: UITextView {
             width: self.bounds.size.width - (self.textContainerInset.left + self.textContainerInset.right),
             height: self.bounds.size.height - (self.textContainerInset.top + self.textContainerInset.bottom))
 
-        if self.placeholderFont != nil {
-            placeholderLabel.font = self.placeholderFont
+        if let placeholderFont = self.placeholderFont {
+
+            placeholderLabel.font = placeholderFont
         }
+
         placeholderLabel.frame = placeholderFrame
         placeholderLabel.text = placeholderText
         placeholderLabel.textAlignment = self.textAlignment
@@ -198,9 +217,10 @@ public class PGCTextView: UITextView {
     private func updateCounterTracking() {
 
         if isCounterAscending {
+
             counterLabel.text = "\(self.text.count)"
-        }
-        else {
+        } else {
+
             counterLabel.text = "\(Int(maxCharacters) - self.text.count)"
         }
     }
