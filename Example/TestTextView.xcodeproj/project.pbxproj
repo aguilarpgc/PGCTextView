@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5EACDB0F207BAF03009C1D06 /* PGCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EACDB0E207BAF03009C1D06 /* PGCTextView.swift */; };
+		5EEDDA762090C43500697F98 /* PGCTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDDA752090C43500697F98 /* PGCTextView.swift */; };
 		5EF6E6E42073C33100482F92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6E6E32073C33100482F92 /* AppDelegate.swift */; };
 		5EF6E6E62073C33100482F92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6E6E52073C33100482F92 /* ViewController.swift */; };
 		5EF6E6E92073C33100482F92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6E6E72073C33100482F92 /* Main.storyboard */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5EACDB0E207BAF03009C1D06 /* PGCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGCTextView.swift; path = ../../Sources/PGCTextView.swift; sourceTree = "<group>"; };
+		5EEDDA752090C43500697F98 /* PGCTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGCTextView.swift; path = ../../Sources/PGCTextView/PGCTextView.swift; sourceTree = "<group>"; };
 		5EF6E6E02073C33100482F92 /* TestTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6E6E32073C33100482F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EF6E6E52073C33100482F92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		5EF6E6E22073C33100482F92 /* TestTextView */ = {
 			isa = PBXGroup;
 			children = (
-				5EACDB0E207BAF03009C1D06 /* PGCTextView.swift */,
+				5EEDDA752090C43500697F98 /* PGCTextView.swift */,
 				5EF6E6E32073C33100482F92 /* AppDelegate.swift */,
 				5EF6E6E52073C33100482F92 /* ViewController.swift */,
 				5EF6E6E72073C33100482F92 /* Main.storyboard */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF6E6E62073C33100482F92 /* ViewController.swift in Sources */,
-				5EACDB0F207BAF03009C1D06 /* PGCTextView.swift in Sources */,
+				5EEDDA762090C43500697F98 /* PGCTextView.swift in Sources */,
 				5EF6E6E42073C33100482F92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
