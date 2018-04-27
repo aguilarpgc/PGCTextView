@@ -82,7 +82,7 @@ public class PGCTextView: UITextView {
         label.font = self.font
         label.lineBreakMode = .byClipping
         label.numberOfLines = 0
-        label.text = placeholderText
+        label.text = self.placeholderText
         label.textAlignment = .left
         self.addSubview(label)
 
@@ -102,7 +102,7 @@ public class PGCTextView: UITextView {
         label.adjustsFontSizeToFitWidth = true
         label.font = self.font
         label.frame = counterFrame
-        label.text = "\(maxCharacters)"
+        label.text = "\(self.maxCharacters)"
         label.textAlignment = .center
         self.addSubview(label)
 
