@@ -9,15 +9,15 @@
 
 Works in xib file and code.
 
-### Installation
+## Installation
 
-#### Manual
+### Manual
 
 Add PGCTextView folder into your project.
 
-### Example Usage
+## Example Usage
 
-#### Code
+### Code
 
 ```swift
 let customTextView = PGCTextView()
