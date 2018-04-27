@@ -9,7 +9,13 @@
 
 Works in xib file and code.
 
-### Usage
+### Installation
+
+#### Manual
+
+Add PGCTextView folder into your project.
+
+### Example Usage
 
 #### Code
 
