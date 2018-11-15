@@ -21,6 +21,7 @@ Add PGCTextView folder into your project.
 
 ```swift
 let customTextView = PGCTextView()
+
 customTextView.counterColor = .blue
 customTextView.counterFont = UIFont.italicSystemFont(ofSize: 11)
 customTextView.font = UIFont.systemFont(ofSize: 25)
@@ -33,6 +34,7 @@ customTextView.placeholderFont = UIFont.italicSystemFont(ofSize: 25)
 customTextView.placeholderText = "Placeholder"
 customTextView.text = ""
 customTextView.textColor = .black
+
 self.view.addSubview(customTextView)
 ```
 
