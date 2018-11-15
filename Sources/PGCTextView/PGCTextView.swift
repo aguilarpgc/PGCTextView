@@ -79,11 +79,13 @@ public class PGCTextView: UITextView {
     private lazy var placeholderLabel: UILabel = {
 
         let label = UILabel()
+        
         label.font = self.font
         label.lineBreakMode = .byClipping
         label.numberOfLines = 0
         label.text = self.placeholderText
         label.textAlignment = .left
+        
         self.addSubview(label)
 
         return label
@@ -99,11 +101,13 @@ public class PGCTextView: UITextView {
         )
 
         let label = UILabel()
+        
         label.adjustsFontSizeToFitWidth = true
         label.font = self.font
         label.frame = counterFrame
         label.text = "\(self.maxCharacters)"
         label.textAlignment = .center
+        
         self.addSubview(label)
 
         return label
@@ -148,6 +152,7 @@ public class PGCTextView: UITextView {
                 let range = self.text.startIndex..<self.text.index(self.text.startIndex, offsetBy: Int(maxCharacters))
 
                 let tempText = self.text[range]
+                
                 self.text = String(tempText)
             }
 
@@ -219,6 +224,7 @@ public class PGCTextView: UITextView {
         if isCounterAscending {
 
             counterLabel.text = "\(self.text.count)"
+            
         } else {
 
             counterLabel.text = "\(Int(maxCharacters) - self.text.count)"
