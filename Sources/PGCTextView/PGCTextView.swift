@@ -135,7 +135,7 @@ public class PGCTextView: UITextView {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.textChanged),
-            name: NSNotification.Name.UITextViewTextDidChange,
+            name: UITextView.textDidChangeNotification,
             object: nil)
     }
 
